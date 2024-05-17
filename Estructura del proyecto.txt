@@ -1,0 +1,84 @@
+INICIAL: 
+
+apifestivos/
+├── .mvn/
+│   ├── wrapper/
+├── .vscode/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── apifestivos/
+│   │   │       └── apifestivos/
+│   │   │           ├── aplicacion/
+│   │   │           │   ├── FestivoServicio.java
+│   │   │               ├── FestivoInformacion.java
+│   │   │               └── FechaInvalidaException.java
+│   │   │           ├── core/
+│   │   │           │   ├── entidades/
+│   │   │           │   │   ├── Festivo.java
+│   │   │           │   │   └── Tipo.java
+│   │   │           │   ├── interfaces/
+│   │   │           │   │   └── repositorios/
+│   │   │           │   │       ├── IFestivoRepositorio.java
+│   │   │           │   │       └── ITipoRepositorio.java
+│   │   │           └── presentacion/
+│   │   │           │   ├── dtos/
+│   │   │           │      ├── FestivoDTO.java
+│   │   │           │      └── TipoDTO.java
+│   │   │               └── FestivoControlador.java
+│   │   │           └── ApifestivosApplication.java
+│   │   └── resources/
+│   │       └── application.properties
+│   └── test/
+│       └── java/
+│           └── apifestivos/
+│               └── ApifestivosApplicationTests.java
+│   └── target/
+│       └── classes/
+│       └── test-classes/
+├── .gitinore/
+├── .mvnw/
+├──mvnw.cmd
+└── pom.xml
+
+ALTERNA: 
+
+apifestivos/
+├── .mvn/
+│   ├── wrapper/
+├── .vscode/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── apifestivos/
+│   │   │       └── apifestivos/
+│   │   │           ├── aplicacion/
+│   │   │           │   ├── FestivoServicio.java
+│   │   │               └── FechaInvalidaException.java
+│   │   │           ├── core/
+│   │   │           │   ├── entidades/
+│   │   │           │   │   ├── Festivo.java
+│   │   │           │   │   └── Tipo.java
+│   │   │           │   ├── interfaces/
+│   │   │           │   │   └── repositorios/
+│   │   │           │   │       ├── IFestivoRepositorio.java
+│   │   │           │   │       └── ITipoRepositorio.java
+│   │   │           └── presentacion/
+│   │   │           │   ├── dtos/
+│   │   │           │      ├── FestivoDTO.java
+│   │   │           │      └── TipoDTO.java
+│   │   │               └── FestivoControlador.java
+│   │   │           └── ApifestivosApplication.java
+│   │   └── resources/
+│   │       └── application.properties
+│   └── test/
+│       └── java/
+│           └── apifestivos/
+│               └── ApifestivosApplicationTests.java
+│   └── target/
+│       └── classes/
+│       └── test-classes/
+├── .gitinore/
+├── .mvnw/
+├──mvnw.cmd
+└── pom.xml
