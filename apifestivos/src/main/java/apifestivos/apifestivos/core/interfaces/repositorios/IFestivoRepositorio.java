@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface IFestivoRepositorio extends JpaRepository<Festivo, Long> {
+public interface IFestivoRepositorio extends JpaRepository<Festivo, Integer> {
     Optional<Festivo> findByDiaAndMes(int dia, int mes);
 }

@@ -4,29 +4,37 @@ package apifestivos.apifestivos.core.entidades;
 
 import jakarta.persistence.*;
 
+
 @Entity
+@Table(name = "festivo")
 public class Festivo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
+    @Column(name = "nombre")
     private String nombre;
+
+    @Column(name = "dia")
     private int dia;
+
+    @Column(name = "mes")
     private int mes;
+
+    @Column(name = "diaspascua")
     private int diasPascua;
 
     @ManyToOne
-    @JoinColumn(name = "id_tipo")
+    @JoinColumn(name = "idtipo")
     private Tipo tipo;
 
     // Getters y Setters
-
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
