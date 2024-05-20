@@ -1,27 +1,27 @@
 
 
-package apifestivos.presentacion.dtos;
+package apifestivos.apifestivos.core.entidades;
 
-public class FestivoDTO {
+import jakarta.persistence.*;
+
+@Entity
+public class Festivo {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nombre;
     private int dia;
     private int mes;
     private int diasPascua;
-    private String tipo;
 
-    public FestivoDTO() {}
-
-    public FestivoDTO(Long id, String nombre, int dia, int mes, int diasPascua, String tipo) {
-        this.id = id;
-        this.nombre = nombre;
-        this.dia = dia;
-        this.mes = mes;
-        this.diasPascua = diasPascua;
-        this.tipo = tipo;
-    }
+    @ManyToOne
+    @JoinColumn(name = "id_tipo")
+    private Tipo tipo;
 
     // Getters y Setters
+
     public Long getId() {
         return id;
     }
@@ -62,11 +62,11 @@ public class FestivoDTO {
         this.diasPascua = diasPascua;
     }
 
-    public String getTipo() {
+    public Tipo getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(Tipo tipo) {
         this.tipo = tipo;
     }
 }

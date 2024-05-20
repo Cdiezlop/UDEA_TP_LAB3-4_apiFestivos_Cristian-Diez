@@ -1,14 +1,15 @@
 
 
-package apifestivos.core.entidades;
+package apifestivos.apifestivos.core.entidades;
 
 import jakarta.persistence.*;
 
 
-import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Tipo {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,15 +17,10 @@ public class Tipo {
     private String tipo;
 
     @OneToMany(mappedBy = "tipo")
-    private List<Festivo> festivos;
-
-    public Tipo() {}
-
-    public Tipo(String tipo) {
-        this.tipo = tipo;
-    }
+    private Set<Festivo> festivos;
 
     // Getters y Setters
+
     public Long getId() {
         return id;
     }
@@ -41,11 +37,11 @@ public class Tipo {
         this.tipo = tipo;
     }
 
-    public List<Festivo> getFestivos() {
+    public Set<Festivo> getFestivos() {
         return festivos;
     }
 
-    public void setFestivos(List<Festivo> festivos) {
+    public void setFestivos(Set<Festivo> festivos) {
         this.festivos = festivos;
     }
 }

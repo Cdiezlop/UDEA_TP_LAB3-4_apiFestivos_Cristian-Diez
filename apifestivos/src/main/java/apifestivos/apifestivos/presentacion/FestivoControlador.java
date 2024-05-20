@@ -1,6 +1,6 @@
 
 
-package apifestivos.presentacion;
+package apifestivos.apifestivos.presentacion;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import apifestivos.aplicacion.FestivoServicio;
-import apifestivos.presentacion.dtos.FestivoDTO;
+import apifestivos.apifestivos.aplicacion.FestivoServicio;
 
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 
 @RestController
@@ -24,16 +24,15 @@ public class FestivoControlador {
     private FestivoServicio festivoServicio;
 
     @GetMapping("/verificar")
-    public FestivoDTO verificarFestivo(@RequestParam String fecha) {
+    public String verificarFestivo(@RequestParam String fecha) {
         try {
-            LocalDate date = LocalDate.parse(fecha, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-            FestivoDTO festivoDTO = festivoServicio.verificarFestivo(date);
-            if (festivoDTO == null) {
-                throw new RuntimeException("No es festivo");
-            }
-            return festivoDTO;
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate date = LocalDate.parse(fecha, formatter);
+            return festivoServicio.verificarFestivo(date);
+        } catch (DateTimeParseException e) {
+            return "Fecha inválida";
         } catch (Exception e) {
-            throw new RuntimeException("Fecha inválida o fuera de rango.", e);
+            return "Fecha inválida";
         }
     }
 }

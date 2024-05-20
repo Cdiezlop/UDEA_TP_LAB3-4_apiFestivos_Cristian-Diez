@@ -1,8 +1,8 @@
 
 
-package apifestivos.core.interfaces.repositorios;
+package apifestivos.apifestivos.core.interfaces.repositorios;
 
-import apifestivos.core.entidades.Tipo;
+import apifestivos.apifestivos.core.entidades.Tipo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
