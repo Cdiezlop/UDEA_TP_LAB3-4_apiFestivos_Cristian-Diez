@@ -1,3 +1,5 @@
+
+
 package apifestivos.core.interfaces.repositorios;
 
 import apifestivos.core.entidades.Tipo;

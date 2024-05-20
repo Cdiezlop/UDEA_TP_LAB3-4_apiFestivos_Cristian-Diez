@@ -22,7 +22,6 @@ public class FestivoDTO {
     }
 
     // Getters y Setters
-
     public Long getId() {
         return id;
     }

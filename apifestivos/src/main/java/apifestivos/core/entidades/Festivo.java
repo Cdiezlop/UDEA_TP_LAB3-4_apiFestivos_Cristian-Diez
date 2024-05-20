@@ -1,5 +1,6 @@
-package apifestivos.core.entidades;
 
+
+package apifestivos.core.entidades;
 
 import jakarta.persistence.*;
 
@@ -8,7 +9,7 @@ public class Festivo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private String nombre;
     private int dia;
     private int mes;
@@ -29,7 +30,6 @@ public class Festivo {
     }
 
     // Getters y Setters
-
     public Long getId() {
         return id;
     }
@@ -78,3 +78,4 @@ public class Festivo {
         this.tipo = tipo;
     }
 }
+

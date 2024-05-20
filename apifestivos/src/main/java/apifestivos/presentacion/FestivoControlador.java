@@ -15,6 +15,7 @@ import apifestivos.presentacion.dtos.FestivoDTO;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+
 @RestController
 @RequestMapping("/api/festivos")
 public class FestivoControlador {
@@ -32,7 +33,7 @@ public class FestivoControlador {
             }
             return festivoDTO;
         } catch (Exception e) {
-            throw new RuntimeException("Fecha inválida o fuera de rango.");
+            throw new RuntimeException("Fecha inválida o fuera de rango.", e);
         }
     }
 }

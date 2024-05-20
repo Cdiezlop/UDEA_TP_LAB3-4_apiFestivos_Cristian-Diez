@@ -38,8 +38,19 @@ public class FestivoServicio {
 
     private Festivo obtenerFestivoBasadoEnPascua(int year) {
         // Lógica para calcular la fecha de Pascua y encontrar festivos relativos a ella
-        // ...
-        return null; // Implementar lógica según sea necesario
+        // Implementación de la lógica de cálculo de Pascua
+        int a = year % 19;
+        int b = year % 4;
+        int c = year % 7;
+        int d = (19 * a + 24) % 30;
+        int e = (2 * b + 4 * c + 6 * d + 5) % 7;
+        int dias = d + e + 10;
+
+        LocalDate pascua = LocalDate.of(year, 3, 15).plusDays(dias);
+
+        // Buscar los festivos basados en Pascua
+        Optional<Festivo> festivo = festivoRepositorio.findByDiaAndMes(pascua.getDayOfMonth(), pascua.getMonthValue());
+        return festivo.orElse(null);
     }
 
     private FestivoDTO convertirAFestivoDTO(Festivo festivo) {
